@@ -43,6 +43,50 @@ module.exports = function(sequelize, DataTypes) {
     STATUS_WEB: {
       type: DataTypes.STRING(10),
       allowNull: true
+    },
+    COLSPAN_APP_NAME: {
+      type: Sequelize.VIRTUAL,
+      get(){
+        //console.log('Get in');
+        return this.getDataValue('COLSPAN_APP_NAME');
+      },
+      set : function(value){
+        //console.log('Set in');
+        this.setDataValue('COLSPAN_APP_NAME', value);
+      }
+    },
+    COLSPAN_IP: {
+      type: Sequelize.VIRTUAL,
+      get(){
+       // console.log('Get in');
+        return this.getDataValue('COLSPAN_IP');
+      },
+      set : function(value){
+        //console.log('Set in');
+        this.setDataValue('COLSPAN_IP', value);
+      }
+    },
+    RESPONSE: {
+      type: Sequelize.VIRTUAL,
+      get(){
+        //console.log('Get in');
+        return this.getDataValue('RESPONSE');
+      },
+      set : function(value){
+        //console.log('Set in');
+        this.setDataValue('RESPONSE', value);
+      }
+    },
+    STATUS_CODE: {
+      type: Sequelize.VIRTUAL,
+      get(){
+        //console.log('Get in');
+        return this.getDataValue('STATUS_CODE');
+      },
+      set : function(value){
+        //console.log('Set in');
+        this.setDataValue('STATUS_CODE', value);
+      }
     }
   }, {
     tableName: 'app_service_list'
